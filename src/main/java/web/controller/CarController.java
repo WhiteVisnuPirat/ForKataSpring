@@ -23,14 +23,7 @@ public class CarController {
     @GetMapping("/")
     public String getCars(@RequestParam(value = "count", required = false) Integer count,
                           Model model) {
-        List<Car> cars;
-
-        if (count == null) {
-            cars = carService.getAllCars();
-        } else {
-            cars = carService.getCars(count);
-        }
-
+        List<Car> cars = carService.getCars(count);
         model.addAttribute("cars", cars);
         return "cars";
     }
