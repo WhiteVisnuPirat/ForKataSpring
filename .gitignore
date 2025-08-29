@@ -43,7 +43,7 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
-.mvn/wrapper/
+.mvn/
 
 # IDE
 .idea/
@@ -52,12 +52,6 @@ release.properties
 *.iws
 *.swp
 *.swo
-
-# Eclipse
-.settings/
-.project
-.classpath
-.metadata/
 
 # Build
 build/

@@ -32,7 +32,7 @@ public class UserController {
                           @RequestParam String email,
                           @RequestParam Integer age) {
         User user = new User(firstName, lastName, email, age);
-        userService.saveUser(user);
+        userService.saveUser(user); // Бизнес-логика в сервисе
         return "redirect:/users";
     }
 
@@ -48,14 +48,14 @@ public class UserController {
             user.setLastName(lastName);
             user.setEmail(email);
             user.setAge(age);
-            userService.updateUser(user);
+            userService.updateUser(user); // Бизнес-логика в сервисе
         }
         return "redirect:/users";
     }
 
     @PostMapping("/deleteUser")
     public String deleteUser(@RequestParam Long id) {
-        userService.deleteUser(id);
+        userService.deleteUser(id); // Бизнес-логика в сервисе
         return "redirect:/users";
     }
 
