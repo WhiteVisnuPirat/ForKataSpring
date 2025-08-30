@@ -28,19 +28,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void saveUser(User user) {
         userDao.save(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void updateUser(User user) {
         userDao.update(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void deleteUser(Long id) {
         userDao.delete(id);
     }
