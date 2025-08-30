@@ -42,14 +42,7 @@ public class UserController {
                              @RequestParam String lastName,
                              @RequestParam String email,
                              @RequestParam Integer age) {
-        User user = userService.getUserById(id);
-        if (user != null) {
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setEmail(email);
-            user.setAge(age);
-            userService.updateUser(user); // Бизнес-логика в сервисе
-        }
+        userService.updateUser(id, firstName, lastName, email, age);
         return "redirect:/users";
     }
 

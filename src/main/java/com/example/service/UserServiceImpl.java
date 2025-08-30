@@ -44,4 +44,17 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(Long id) {
         userDao.delete(id);
     }
+
+    @Override
+    @Transactional
+    public void updateUser(Long id, String firstName, String lastName, String email, Integer age) {
+        User user = userDao.findById(id);
+        if (user != null) {
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            user.setEmail(email);
+            user.setAge(age);
+            userDao.update(user);
+        }
+    }
 }

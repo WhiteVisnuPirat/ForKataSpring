@@ -9,4 +9,6 @@ public interface UserService {
     void saveUser(User user);
     void updateUser(User user);
     void deleteUser(Long id);
+    void updateUser(Long id, String firstName, String lastName, String email, Integer age);
+
 }
